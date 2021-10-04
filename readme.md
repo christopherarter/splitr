@@ -1,6 +1,6 @@
 ## Splitr
 
-Splitr is a minimalist, dependency-free, *near 100% precise* splitting engine. This can be used for traffic plitting, or any other implimentation you need to split an outcome. **Sum of weights must equal 100.**
+Splitr is a minimalist, dependency-free, _near 100% precise_ splitting engine. This can be used for traffic plitting, or any other implimentation you need to split an outcome. **Sum of weights must equal 100.**
 
 Example:
 
@@ -26,6 +26,7 @@ Example:
 
     // "70% of the time" (most likely)
 ```
+
 ## Accuracy
 
 Currently, the accuracy has been ~99.95% - 99.97%.
