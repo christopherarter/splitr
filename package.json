@@ -1,0 +1,25 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "A starter repo for typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier-fix": "npx prettier --write .",
+    "prettier-check": "npx prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopherarter/typescript-starter.git"
+  },
+  "author": "Chris Arter <chris@arter.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
+    "prettier": "2.3.2",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
+  }
+}
