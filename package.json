@@ -1,7 +1,7 @@
 {
-  "name": "typescript-starter",
+  "name": "splitr",
   "version": "1.0.0",
-  "description": "A starter repo for typescript",
+  "description": "Splitr is a minimalist accurate splitting engine",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
