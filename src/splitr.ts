@@ -1,6 +1,6 @@
-import SplitOption from "./types/SplitOption";
+import SplitOption from "./types/splitOption";
 
-class splittr {
+class Splitr {
   protected queueA: SplitOption[];
   protected queueB: SplitOption[];
   protected splits: SplitOption[];
@@ -60,4 +60,4 @@ class splittr {
     return total;
   }
 }
-export default splittr;
+export default Splitr;

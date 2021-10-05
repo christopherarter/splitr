@@ -1,2 +1,2 @@
-import splittr from "./src/splittr";
-export { splittr };
+import Splitr from "./src/splitr";
+export { Splitr };

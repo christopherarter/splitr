@@ -1,8 +1,8 @@
-## splittr
+## Splitr
 
-![example workflow](https://github.com/christopherarter/splittr/actions/workflows/pipeline.yaml/badge.svg)
+![example workflow](https://github.com/christopherarter/splitr/actions/workflows/pipeline.yaml/badge.svg)
 
-splittr is a minimalist, dependency-free, _near 100% precise_ splitting engine. This can be used for traffic splitting, or any other implimentation you need to split an outcome. **Sum of weights must equal 100.**
+Splitr is a minimalist, dependency-free, _near 100% precise_ splitting engine. This can be used for traffic splitting, or any other implimentation you need to split an outcome. **Sum of weights must equal 100.**
 
 Example:
 
@@ -22,9 +22,9 @@ Example:
       },
     ];
 
-    const splittr = new splittr(options);
+    const splitr = new Splitr(options);
 
-    let result = splittr.run();
+    let result = splitr.run();
 
     // "70% of the time" (most likely)
 ```

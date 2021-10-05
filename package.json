@@ -1,7 +1,7 @@
 {
-  "name": "splittr",
+  "name": "@arter/splitr",
   "version": "1.0.0",
-  "description": "Splittr is a minimalist accurate splitting engine",
+  "description": "splittr is a minimalist accurate splitting engine",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",

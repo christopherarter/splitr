@@ -1,8 +1,8 @@
-import Splittr from "./splittr";
-import SplitOption from "./types/SplitOption";
+import Splitr from "./splitr";
+import SplitOption from "./types/splitOption";
 
-describe("Splittr Tests", () => {
-  test("Splittr accurate splits 10,000 requests", () => {
+describe("splitr Tests", () => {
+  test("splitr accurate splits 10,000 requests", () => {
     const options: SplitOption[] = [
       {
         weight: 10,
@@ -18,14 +18,16 @@ describe("Splittr Tests", () => {
       },
     ];
 
-    const splittr = new Splittr(options);
+    const splitr = new Splitr(options);
     const results = [];
     for (let i = 0; i < 10000; i++) {
-      results.push(splittr.run());
+      results.push(splitr.run());
     }
-    let weightOf10 = results.filter((item: SplitOption) => item.weight === 10);
-    let weightOf20 = results.filter((item: SplitOption) => item.weight === 20);
-    let weightOf70 = results.filter((item: SplitOption) => item.weight === 70);
+    let [weightOf10, weightOf20, weightOf70] = [
+      results.filter((item: SplitOption) => item.weight === 10),
+      results.filter((item: SplitOption) => item.weight === 20),
+      results.filter((item: SplitOption) => item.weight === 70),
+    ];
     expect(weightOf10.length).toBeCloseTo(1000, 0.01);
     expect(weightOf20.length).toBeCloseTo(2000, 0.01);
     expect(weightOf70.length).toBeCloseTo(7000, 0.01);
@@ -47,7 +49,7 @@ describe("Splittr Tests", () => {
       },
     ];
     const createInstance = () => {
-      new Splittr(options);
+      new Splitr(options);
     };
     expect(createInstance).toThrowError();
   });
