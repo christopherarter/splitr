@@ -1,6 +1,6 @@
 ## Splitr
 
-![example workflow](https://github.com/christopherarter/splitr/actions/workflows/CI.yaml/badge.svg)
+![example workflow](https://github.com/christopherarter/splitr/actions/workflows/pipeline.yaml/badge.svg)
 
 Splitr is a minimalist, dependency-free, _near 100% precise_ splitting engine. This can be used for traffic splitting, or any other implimentation you need to split an outcome. **Sum of weights must equal 100.**
 
