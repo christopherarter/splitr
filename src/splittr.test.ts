@@ -1,8 +1,8 @@
-import Splitr from "./splitr";
+import Splittr from "./splittr";
 import SplitOption from "./types/SplitOption";
 
-describe("Splitr Tests", () => {
-  test("Splitr accurate splits 10,000 requests", () => {
+describe("Splittr Tests", () => {
+  test("Splittr accurate splits 10,000 requests", () => {
     const options: SplitOption[] = [
       {
         weight: 10,
@@ -18,10 +18,10 @@ describe("Splitr Tests", () => {
       },
     ];
 
-    const splitr = new Splitr(options);
+    const splittr = new Splittr(options);
     const results = [];
     for (let i = 0; i < 10000; i++) {
-      results.push(splitr.run());
+      results.push(splittr.run());
     }
     let weightOf10 = results.filter((item: SplitOption) => item.weight === 10);
     let weightOf20 = results.filter((item: SplitOption) => item.weight === 20);
@@ -47,7 +47,7 @@ describe("Splitr Tests", () => {
       },
     ];
     const createInstance = () => {
-      new Splitr(options);
+      new Splittr(options);
     };
     expect(createInstance).toThrowError();
   });

@@ -1,6 +1,6 @@
 import SplitOption from "./types/SplitOption";
 
-class Splitr {
+class splittr {
   protected queueA: SplitOption[];
   protected queueB: SplitOption[];
   protected splits: SplitOption[];
@@ -46,7 +46,9 @@ class Splitr {
   protected validate(splits: SplitOption[]) {
     const sum = this.sumOfSplitWeights(splits);
     if (sum !== 100) {
-      throw new Error(`Splitr: Split weights must equal 100, received ${sum}.`);
+      throw new Error(
+        `splittr: Split weights must equal 100, received ${sum}.`
+      );
     }
   }
 
@@ -58,4 +60,4 @@ class Splitr {
     return total;
   }
 }
-export default Splitr;
+export default splittr;
