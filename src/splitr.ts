@@ -5,6 +5,7 @@ class Splitr {
   protected queueB: SplitOption[];
   protected splits: SplitOption[];
   constructor(splits: SplitOption[]) {
+    this.validate(splits);
     this.splits = splits;
     this.queueA = [];
     this.queueB = [];
@@ -38,7 +39,23 @@ class Splitr {
     }
     const result = this.queueA[0];
     this.queueA.shift();
+    this.queueB.push(result);
     return result;
+  }
+
+  protected validate(splits: SplitOption[]) {
+    const sum = this.sumOfSplitWeights(splits);
+    if (sum !== 100) {
+      throw new Error(`Splitr: Split weights must equal 100, received ${sum}.`);
+    }
+  }
+
+  protected sumOfSplitWeights(splits: SplitOption[]) {
+    let total = 0;
+    splits.forEach((split: SplitOption) => {
+      total = total + split.weight;
+    });
+    return total;
   }
 }
 export default Splitr;

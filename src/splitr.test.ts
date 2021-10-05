@@ -1,8 +1,8 @@
 import Splitr from "./splitr";
 import SplitOption from "./types/SplitOption";
 
-describe("splits 10,000 times accurately", () => {
-  test("Splitr returns a value", () => {
+describe("Splitr Tests", () => {
+  test("Splitr accurate splits 10,000 requests", () => {
     const options: SplitOption[] = [
       {
         weight: 10,
@@ -29,5 +29,26 @@ describe("splits 10,000 times accurately", () => {
     expect(weightOf10.length).toBeCloseTo(1000, 0.01);
     expect(weightOf20.length).toBeCloseTo(2000, 0.01);
     expect(weightOf70.length).toBeCloseTo(7000, 0.01);
+  });
+
+  test("Throws error with invalid weight sum", () => {
+    const options: SplitOption[] = [
+      {
+        weight: 30,
+        value: "30% of the time",
+      },
+      {
+        weight: 20,
+        value: "20% of the time",
+      },
+      {
+        weight: 70,
+        value: "70% of the time",
+      },
+    ];
+    const createInstance = () => {
+      new Splitr(options);
+    };
+    expect(createInstance).toThrowError();
   });
 });
