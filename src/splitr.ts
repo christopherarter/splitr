@@ -1,5 +1,4 @@
 import SplitOption from "./types/splitOption";
-
 class Splitr {
   protected queueA: SplitOption[];
   protected queueB: SplitOption[];
