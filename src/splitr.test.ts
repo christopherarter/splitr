@@ -1,8 +1,8 @@
-import Splitr from "./splitr";
-import SplitOption from "./types/splitOption";
+import Splitr from "./Splitr";
+import SplitOption from "./types/SplitOption";
 
 describe("splitr Tests", () => {
-  test("splitr accurate splits 10,000 requests", () => {
+  test("splitr accurate splits 10,000 runs", () => {
     const options: SplitOption[] = [
       {
         weight: 10,

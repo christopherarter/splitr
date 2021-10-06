@@ -1,44 +1,39 @@
-import SplitOption from "./types/splitOption";
+import SplitOption from "./types/SplitOption";
 class Splitr {
-  protected queueA: SplitOption[];
-  protected queueB: SplitOption[];
+  protected queue: SplitOption[];
   protected splits: SplitOption[];
+  protected currentIndex: number;
   constructor(splits: SplitOption[]) {
     this.validate(splits);
     this.splits = splits;
-    this.queueA = [];
-    this.queueB = [];
+    this.queue = [];
+    this.currentIndex = 0;
     this.fillQueue();
+    this.shuffleQueue();
   }
+  
   protected fillQueue() {
-    if (this.queueA.length === 0 && this.queueB.length === 0) {
-      this.splits.forEach((split: SplitOption) => {
-        for (let i = 0; i < split.weight; i++) {
-          this.queueA.push(split);
-        }
-      });
-      this.shuffleQueue();
-    } else {
-      let tempArray: SplitOption[] = [];
-      this.queueA = tempArray.concat(this.queueB);
-      this.queueB = [];
-    }
+    this.splits.forEach((split: SplitOption) => {
+      for (let i = 0; i < split.weight; i++) {
+        this.queue.push(split);
+      }
+    });
   }
 
   protected shuffleQueue() {
-    for (let i = this.queueA.length - 1; i > 0; i--) {
+    for (let i = this.queue.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [this.queueA[i], this.queueA[j]] = [this.queueA[j], this.queueA[i]];
+      [this.queue[i], this.queue[j]] = [this.queue[j], this.queue[i]];
     }
   }
 
   public run(): SplitOption {
-    if (this.queueA.length === 0) {
-      this.fillQueue();
+    const result = this.queue[this.currentIndex];
+    this.currentIndex++;
+    if(this.currentIndex == this.queue.length)
+    {
+      this.currentIndex = 0;
     }
-    const result = this.queueA[0];
-    this.queueA.shift();
-    this.queueB.push(result);
     return result;
   }
 
