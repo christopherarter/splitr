@@ -11,7 +11,7 @@ class Splitr {
     this.fillQueue();
     this.shuffleQueue();
   }
-  
+
   protected fillQueue() {
     this.splits.forEach((split: SplitOption) => {
       for (let i = 0; i < split.weight; i++) {
@@ -30,8 +30,7 @@ class Splitr {
   public run(): SplitOption {
     const result = this.queue[this.currentIndex];
     this.currentIndex++;
-    if(this.currentIndex == this.queue.length)
-    {
+    if (this.currentIndex == this.queue.length) {
       this.currentIndex = 0;
     }
     return result;
