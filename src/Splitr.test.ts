@@ -34,7 +34,7 @@ describe("splitr Tests", () => {
   });
 
   test("Throws error with invalid weight sum", () => {
-    const options: SplitOption[] = [
+    const options: SplitOption[] = ``
       {
         weight: 30,
         value: "30% of the time",
@@ -45,7 +45,7 @@ describe("splitr Tests", () => {
       },
       {
         weight: 70,
-        value: "70% of the time",
+        value: "70% of the time",`
       },
     ];
     const createInstance = () => {
